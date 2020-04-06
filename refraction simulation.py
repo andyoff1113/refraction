@@ -6,12 +6,12 @@ size = 0.5
 height = 15.0       
 scene = display(width=600, height=600,x=0, y=0,
                 center = (0,height/2,0), background=(0.5,0.5,0))
-touchlist=[] #¬O§_¤w¸IÄ²
+touchlist=[] #æ˜¯å¦å·²ç¢°è§¸
 Llist=[]
-l=0.05 #ªi³q¹L¤¶½è1¸ò¤¶½è2¥æ¬É³Bªºªø«×¡A¦b¤¶½è1ªºªiªø¬°l*cos(theta1)¡A¦b¤¶½è2ªºªiªø¬°l*cos(theta2)
+l=0.05 #æ³¢é€šéä»‹è³ª1è·Ÿä»‹è³ª2äº¤ç•Œè™•çš„é•·åº¦ï¼Œåœ¨ä»‹è³ª1çš„æ³¢é•·ç‚ºl*cos(theta1)ï¼Œåœ¨ä»‹è³ª2çš„æ³¢é•·ç‚ºl*cos(theta2)
 minDistance = 99999
 
-def refraction_vector(ni, nf, touch_pos, in_vector):#(¶i§é®g²v, ¥X§é®g²v, ±µÄ²ÂI, ¶i¦V¶q)
+def refraction_vector(ni, nf, touch_pos, in_vector):#(é€²æŠ˜å°„ç‡, å‡ºæŠ˜å°„ç‡, æ¥è§¸é», é€²å‘é‡)
  N_vector=touch_pos-glass.pos
  nor_in_vector=in_vector/abs(in_vector)
  nor_N_vector=N_vector/abs(N_vector)
@@ -34,7 +34,7 @@ for N in range(3):
               make_trail= True, trail_type="curve", interval=100,pos=(-25,5+N*2.5,0),v=vector(0.01,-0.0005,0)))
 for N in range(6):
       touchlist.append(0)
-      #¨¤½¤1.3375 ¤ô´¹Åé1.4 ªÅ®ğ1 ¬Á¼ş1.55
+      #è§’è†œ1.3375 æ°´æ™¶é«”1.4 ç©ºæ°£1 ç»ç’ƒ1.55
       
 gd = gdisplay(x=800,y=0,width=600,height=600,
               title='d-t', xtitle='t', ytitle='distance',
@@ -71,9 +71,9 @@ while True:
  f2.plot(pos=(t,tempDistance2))
  f3.plot(pos=(t,tempDistance3))
  if tempDistance1 <= minDistance and t>=3:
-   minDistance = tempDistance1#Àx¦s¨âÂI¶ZÂ÷
+   minDistance = tempDistance1#å„²å­˜å…©é»è·é›¢
 
  for N in range(6):
-      Llist[N].pos=Llist[N].pos+Llist[N].v#¥ú¤l¹B°Ê
+      Llist[N].pos=Llist[N].pos+Llist[N].v#å…‰å­é‹å‹•
 
 
